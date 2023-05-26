@@ -1,6 +1,6 @@
 import { Card, Form, Button, Alert } from 'react-bootstrap';
 import './form-paciente.css';
-import GridPaciente from '../GridPaciente/GridPaciente';
+import GridPaciente from '../GridPaciente';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 
@@ -130,7 +130,7 @@ const FormPaciente = () => {
           </Form>
         </Card.Body>
       </Card>
-      <GridPaciente />
+      <GridPaciente listaPacientes={listaPacientes} />
     </>
   );
 };
