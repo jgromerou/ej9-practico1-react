@@ -3,6 +3,7 @@ import './form-paciente.css';
 import GridPaciente from '../GridPaciente';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import NoHayCard from '../NoHayCard';
 
 const FormPaciente = () => {
   let pacienteLocalstorage =
@@ -144,10 +145,14 @@ const FormPaciente = () => {
           </Form>
         </Card.Body>
       </Card>
-      <GridPaciente
-        listaPacientes={listaPacientes}
-        borrarPaciente={borrarPaciente}
-      />
+      {listaPacientes.length === 0 ? (
+        <NoHayCard />
+      ) : (
+        <GridPaciente
+          listaPacientes={listaPacientes}
+          borrarPaciente={borrarPaciente}
+        />
+      )}
     </>
   );
 };
