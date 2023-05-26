@@ -57,6 +57,13 @@ const FormPaciente = () => {
       (item) => item !== nombrePaciente
     );
     setListaPacientes(_listaPacientes);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Se borró correctamente la cita del paciente',
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   //función para mostrar alerta
