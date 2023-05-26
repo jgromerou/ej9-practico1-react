@@ -1,0 +1,4 @@
+.container-wrapper {
+  max-width: 400px; /* Define el ancho máximo deseado */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
