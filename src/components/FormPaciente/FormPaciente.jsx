@@ -1,4 +1,4 @@
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card, Form, Button, Alert } from 'react-bootstrap';
 import './form-paciente.css';
 import GridPaciente from '../GridPaciente/GridPaciente';
 import { useState, useEffect } from 'react';
@@ -12,6 +12,7 @@ const FormPaciente = () => {
   const [hora, setHora] = useState('');
   const [sintomasPaciente, setSintomasPaciente] = useState('');
   const [listaPacientes, setListaPacientes] = useState(pacienteLocalstorage);
+  const [alerta, setAlerta] = useState('');
 
   useEffect(() => {
     localStorage.setItem('listaPacientes', JSON.stringify(listaPacientes));
@@ -19,8 +20,13 @@ const FormPaciente = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    //TODO: hacer la validación	de todos los datos obligatorios
-    //si se completa todos los datos se agrega la persona
+    if (
+      [nombreMascota, nombreDuenio, fecha, hora, sintomasPaciente].includes('')
+    ) {
+      mostrarAlerta('Completar todos los datos');
+      return;
+    }
+    //si se completa todos los datos se agrega la cita del paciente
     agregarPaciente({
       nombreMascota,
       nombreDuenio,
@@ -39,6 +45,15 @@ const FormPaciente = () => {
     setSintomasPaciente('');
   };
 
+  //función para mostrar alerta
+  const mostrarAlerta = (alerta) => {
+    setAlerta(alerta);
+
+    setTimeout(() => {
+      setAlerta('');
+    }, 3000);
+  };
+
   return (
     <>
       <Card>
@@ -50,6 +65,7 @@ const FormPaciente = () => {
             <Form.Label className="display-6 mb-3 mt-1">
               <em>Ingrese nueva cita:</em>
             </Form.Label>
+            {alerta && <Alert variant="danger">{alerta}</Alert>}
             <Form.Group className="mb-4" controlId="nomMascota">
               <Form.Label className="fw-bold">Nombre de Mascota</Form.Label>
               <Form.Control
