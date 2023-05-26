@@ -2,6 +2,7 @@ import { Card, Form, Button, Alert } from 'react-bootstrap';
 import './form-paciente.css';
 import GridPaciente from '../GridPaciente/GridPaciente';
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 
 const FormPaciente = () => {
   let pacienteLocalstorage =
@@ -26,7 +27,6 @@ const FormPaciente = () => {
       mostrarAlerta('Completar todos los datos');
       return;
     }
-    //si se completa todos los datos se agrega la cita del paciente
     agregarPaciente({
       nombreMascota,
       nombreDuenio,
@@ -38,6 +38,13 @@ const FormPaciente = () => {
 
   const agregarPaciente = (paciente) => {
     setListaPacientes([...listaPacientes, paciente]);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Se creó correctamente la nueva cita',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     setNombreMascota('');
     setNombreDuenio('');
     setFecha('');
