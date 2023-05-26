@@ -13,9 +13,24 @@
   max-width: auto;
 }
 
-@media all and (max-width: 996px) {
+.input-width {
+  width: 120px;
+}
+
+@media all and (max-width: 576px) {
   .colorBox {
     min-width: 60px;
     height: 60px;
+  }
+
+  .input-width {
+    width: 150px;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 768px) {
+  .colorBox {
+    min-width: 70px;
+    height: 70px;
   }
 }

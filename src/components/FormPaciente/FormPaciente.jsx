@@ -30,12 +30,12 @@ const FormPaciente = () => {
               />
             </Form.Group>
             <div className="d-flex flex-row">
-              <Form.Group className="mb-4 col-9 pe-1" controlId="dniPersona">
+              <Form.Group className="mb-4 col-9 pe-1" controlId="fecha">
                 <Form.Label className="fw-bold">Fecha</Form.Label>
                 <Form.Control type="date" placeholder="Ingrese Fecha" />
               </Form.Group>
 
-              <Form.Group className="mb-4 col-3" controlId="emailPersona">
+              <Form.Group className="mb-4 col-3" controlId="hora">
                 <Form.Label className="fw-bold">Hora</Form.Label>
                 <Form.Control type="time" placeholder="Ingrese Hora" />
               </Form.Group>
