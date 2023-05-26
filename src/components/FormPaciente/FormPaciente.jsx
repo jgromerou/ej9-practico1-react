@@ -1,12 +1,13 @@
 import { Card, Form, Button } from 'react-bootstrap';
 import './form-paciente.css';
+import GridPaciente from '../GridPaciente/GridPaciente';
 
 const FormPaciente = () => {
   return (
     <>
       <Card>
         <Card.Body>
-          <Card.Title className="mb-3 text-uppercase display-6 fw-bold text-center bg-light">
+          <Card.Title className="mb-3 text-uppercase display-6 fw-bold text-center ">
             Administrar Pacientes de Veterinaria
           </Card.Title>
           <Form className="container-wrapper">
@@ -54,6 +55,7 @@ const FormPaciente = () => {
           </Form>
         </Card.Body>
       </Card>
+      <GridPaciente />
     </>
   );
 };

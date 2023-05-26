@@ -1,4 +1,21 @@
 .colorBox {
-  min-width: 250px;
-  height: 200px;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: blue;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: auto;
+}
+
+@media all and (max-width: 996px) {
+  .colorBox {
+    min-width: 60px;
+    height: 60px;
+  }
 }
