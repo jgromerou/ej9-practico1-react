@@ -1,7 +1,7 @@
 import { Card, Row } from 'react-bootstrap';
 import CardPaciente from './CardPaciente/CardPaciente';
 
-const GridPaciente = ({ listaPacientes }) => {
+const GridPaciente = ({ listaPacientes, borrarPaciente }) => {
   return (
     <>
       <Card className="mt-3">
@@ -10,7 +10,11 @@ const GridPaciente = ({ listaPacientes }) => {
         </Card.Title>
         <Row className="my-4 px-3">
           {listaPacientes.map((paciente, index) => (
-            <CardPaciente key={index} paciente={paciente} />
+            <CardPaciente
+              key={index}
+              paciente={paciente}
+              borrarPaciente={borrarPaciente}
+            />
           ))}
         </Row>
       </Card>

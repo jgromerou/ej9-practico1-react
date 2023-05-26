@@ -52,6 +52,13 @@ const FormPaciente = () => {
     setSintomasPaciente('');
   };
 
+  const borrarPaciente = (nombrePaciente) => {
+    let _listaPacientes = listaPacientes.filter(
+      (item) => item !== nombrePaciente
+    );
+    setListaPacientes(_listaPacientes);
+  };
+
   //función para mostrar alerta
   const mostrarAlerta = (alerta) => {
     setAlerta(alerta);
@@ -130,7 +137,10 @@ const FormPaciente = () => {
           </Form>
         </Card.Body>
       </Card>
-      <GridPaciente listaPacientes={listaPacientes} />
+      <GridPaciente
+        listaPacientes={listaPacientes}
+        borrarPaciente={borrarPaciente}
+      />
     </>
   );
 };

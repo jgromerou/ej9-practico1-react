@@ -1,7 +1,7 @@
 import { Card, Form, Button, Col } from 'react-bootstrap';
 import './card-paciente.css';
 
-const CardPaciente = ({ paciente }) => {
+const CardPaciente = ({ paciente, borrarPaciente }) => {
   return (
     <>
       <Col md={6} lg={4} className="mb-3">
@@ -57,7 +57,11 @@ const CardPaciente = ({ paciente }) => {
                   readOnly
                 />
               </Form.Group>
-              <Button variant="danger" className="float-end">
+              <Button
+                variant="danger"
+                className="float-end"
+                onClick={() => borrarPaciente(paciente)}
+              >
                 Borrar
               </Button>
             </Form>
